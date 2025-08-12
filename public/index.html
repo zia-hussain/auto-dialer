@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Auto Dialer Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  </head>
+  <body class="bg-light">
+    <div class="container py-4" style="max-width: 720px">
+      <h3 class="mb-3">Auto Dialer</h3>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="mb-2">
+            <strong>Current number:</strong> <span id="current">—</span>
+          </div>
+          <div class="mb-2">
+            <strong>Status:</strong> <span id="status">Idle</span>
+          </div>
+          <div class="mb-2">
+            <strong>Index:</strong> <span id="index">0</span> &nbsp;|&nbsp;
+            <strong>Remaining:</strong> <span id="remaining">0</span>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <button id="start" class="btn btn-dark">Start</button>
+            <button id="stop" class="btn btn-danger">Stop</button>
+            <button id="next" class="btn btn-secondary">Next</button>
+            <button id="reset" class="btn btn-outline-secondary">
+              Full Reset
+            </button>
+
+            <div class="form-check form-switch ms-auto">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="autoNext"
+                checked
+              />
+              <label class="form-check-label" for="autoNext">Auto‑Next</label>
+            </div>
+          </div>
+
+          <div class="mt-3 d-flex gap-2">
+            <input
+              id="startIndex"
+              type="number"
+              min="0"
+              class="form-control"
+              placeholder="Start index e.g. 3"
+            />
+            <button id="startFrom" class="btn btn-primary">Start From</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
